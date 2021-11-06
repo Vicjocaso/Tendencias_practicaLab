@@ -11,16 +11,26 @@ def primo(num, n=2):
 
 
 def fibona(n):
-    x = []
-    a, b = 0, 1
-    while a < n:
-        print(a + b)
-        primo(a)
-        print()
-        a, b = b, a+b
-        x.append(a)
-    print(x)
+    if n > 1:
+        return fibona(n-1) + fibona(n-2)
+    return n
+
+# Funcion par o impar
 
 
-# resultados
-fibona(50)
+def par_impar(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+
+# sepaar
+
+
+def dig(num):
+    return [int(a) for a in str(num)]
+
+
+# 50 ite
+for i in range(50):
+    print(fibona(i), primo(i), par_impar(i), dig(i))
